@@ -1,0 +1,25 @@
+<!-- Property binding using tag attributes -->
+<h1 [textContent]="courseName"></h1>
+<img [src]="imageUrl">
+<!-- Propetry binding using tag attributes + value of attribute is decided in the DOM object -->
+<table>
+  <tr>
+    <td [attr.colspan] = "colSpan">{{courseName}}</td>
+  </tr>
+</table>
+<!-- Property binding using attributes  also or class binding with an if condition. -->
+<button [style.backgroundColor]="isActive? 'yellow'  : 'blue' ">Click</button>
+<!-- Event binding where i can use 2 directions first one is:
+1- sending value to method by using $event
+2- sending value to method by using template value (#firstname) which is used the same way as $event
+and contains info about the tag -->
+<input #firstname (keyup.enter)="keyUpMethod(firstname.value)">
+<!-- Propagation, also a way for one way binding -->
+<h1>{{nameVal}}</h1>
+<!-- Another way of one way method using propetry binding, while having a value inside the DOM -->
+<input  [value]="nameval">
+<br>
+<!-- you could control the value of it by using it in two way binding
+using banana inbox which i [(....)] and ngmodel-->
+<input [(ngModel)]="nameval" type="text">
+<h1>{{nameval}}</h1>
