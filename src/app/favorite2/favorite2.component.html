@@ -1,0 +1,16 @@
+
+<!-- Glyphicon class can be replaced with ngClass
+to be able to write cleaner code if there are multiple class bindings -->
+<div class="glyphicon" style="font-size: 50px;"
+[class.glyphicon-heart]="isFavorite"
+[class.glyphicon-heart-empty]="!isFavorite"
+(click)="Favorite()">
+</div>
+
+
+<!-- Like So -->
+<div class="glyphicon" style="font-size:50px" [ngClass]="{
+  'glyphicon-heart': isFavorite,
+   'glyphicon-heart-empty': !isFavorite
+  }" (click)="Favorite()">
+</div>
