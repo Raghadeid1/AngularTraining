@@ -1,0 +1,27 @@
+<!-- The Accordion can be made with ng Bootstrap as well like the dropdown menu like so -->
+<!---------------------------------------------------------------------------------------->
+<div class="container">
+  <div ngbAccordion [closeOthers]="true">
+    <div ngbAccordionItem [collapsed]="false">
+      <h2 ngbAccordionHeader>
+        <button (click)="clicked($event)" ngbAccordionButton>Accordion #1</button>
+      </h2>
+      <div ngbAccordionCollapse >
+        <div ngbAccordionBody [@expandCollapse]="clickedBtn ? 'expanded' : 'collapsed'">
+          <ng-template>Content for the first item</ng-template>
+        </div>
+      </div>
+    </div>
+    <div ngbAccordionItem [collapsed]="false">
+      <h2 ngbAccordionHeader>
+        <button ngbAccordionButton (click)="clicked2($event)">Accordion #2</button>
+      </h2>
+      <div ngbAccordionCollapse>
+        <div ngbAccordionBody [@expandCollapse]="clickedBtn2 ? 'expanded' : 'collapsed'">
+          <ng-template>Content for the second item</ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---------------------------------------------------------------------------------------->
